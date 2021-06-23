@@ -13,24 +13,28 @@ body {
 
 h1 {
   font-family: "Shippori Mincho", serif;
-  font-size: 6rem;
+  font-size: 4.5rem;
   color: #ffffff;
 }
 
 h3 {
   font-family: "Chivo", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #ffd60a;
   font-weight: 100;
   letter-spacing: 0.15rem;
 }
 h5 {
   font-family: "Shippori Mincho", serif;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 h6 {
   color: #ffd60a;
+}
+#landingpage-info {
+  width: 34rem;
+  display: contents;
 }
 
 #intro {
@@ -49,8 +53,6 @@ h6 {
 
 #about-blurb {
   color: #001d3d;
-  margin-left: 170px;
-  margin-right: 170px;
   margin-top: 20px;
   margin-bottom: 20px;
   font-family: "Shippori Mincho", serif;
@@ -60,11 +62,10 @@ h6 {
 #about-card {
   margin-top: 7rem;
   margin-bottom: 7rem;
-  margin-right: 6rem;
-  margin-left: 6rem;
+  background-color: #fff
 }
 
-.zuc {
+.fade-in {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -93,6 +94,10 @@ h6 {
   100% {
     transform: translateX(0);
   }
+}
+#landingpage-container {
+  background-color: #001d3d;
+   height: 35.8rem;
 }
 
 .rectangle {
@@ -167,9 +172,13 @@ h6 {
   padding-left: 4rem;
   margin-bottom: 3rem;
 }
-
+.height100 {
+  height: 100%;
+}
 .headshot {
-  margin-left: -5%;
+  float: right;
+  margin: 0;
+  width: 37.5%;
 }
 
 .intro {
@@ -205,7 +214,7 @@ h6 {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
   letter-spacing: 0.1rem;
-  font-size: 110%;
+  font-size: 70%;
   color: white;
   background-color: transparent;
   border-color: white;
