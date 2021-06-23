@@ -10,8 +10,11 @@
     <meta property="og:title" content="Personal Portfolio" />
     <meta property="og:description" content="My Personal Portfolio" />
     <meta property="og:url" content="{{ url }}" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
@@ -35,27 +38,27 @@
     <header class="nav-bar">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('projects') }}">Projects</a>
-                    </li>
-                </ul>
-            </div>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('index') }}"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('projects') }}">Projects</a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
-    <div style="background-color:#001D3D; height:50rem" class="d-flex">
+    <div style="background-color: #001d3d; height: 50rem" class="d-flex">
       <div class="container">
-        <div class="row" style="height:100%">
+        <div class="row" style="height: 100%">
           <div class="col-lg-6 d-flex align-items-center intro">
-            <div style="width:34rem">
+            <div style="width: 34rem">
               <h1>Production Engineer.</h1>
               <h3 class="mt-4">
                 Hi, I am real Production Engineer. I really like production
@@ -266,38 +269,53 @@
         </div>
       </div>
     </div>
-    
 
     <footer>
       <div class="containerp">
         <h5>
-          I’m a Student, I'm currently enrolled in MLH Fellowship. Making this page is part of my introduction course and I love it!
+          I’m a Student, I'm currently enrolled in MLH Fellowship. Making this
+          page is part of my introduction course and I love it!
         </h5>
       </div>
-      <hr>
+      <hr />
       <div class="footer">
         <div>
           <form action="/">
             <h5>Drop your info and we'll get in touch.</h5>
             <!-- <label for="Name"></label> -->
             <div>
-              <input type="text" name="name" id="name" placeholder="Your Name"/>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Your Name"
+              />
             </div>
             <div>
-              <input type="text" name="email" id="email" placeholder="Email"/>
+              <input type="text" name="email" id="email" placeholder="Email" />
             </div>
             <div>
-              <input type="text" name="subject" id="subject" placeholder="Subject"/>
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="Subject"
+              />
             </div>
             <div>
-              <input type="text" name="Message" id="Message" placeholder="Message"/>
+              <input
+                type="text"
+                name="Message"
+                id="Message"
+                placeholder="Message"
+              />
             </div>
             <div>
-              <input type="submit" class="btnf" value="Send Message"/>
+              <input type="submit" class="btnf" value="Send Message" />
             </div>
           </form>
         </div>
-        
+
         <div class="columnf">
           <h3 id="contactf">Contact Me</h3>
           <p>4657 Franklin Avenue, ARCH CAPE</p>
@@ -305,16 +323,12 @@
           <p>email@email.com</p>
           <button>Download Resume</button>
           <div class="rowf">
-            <img src="./static/img/logo.jpg" >
-            <img src="./static/img/logo.jpg" >
-            <img src="./static/img/logo.jpg" >
+            <img src="./static/img/logo.jpg" />
+            <img src="./static/img/logo.jpg" />
+            <img src="./static/img/logo.jpg" />
           </div>
         </div>
-
       </div>
-
-
     </footer>
-
   </body>
 </html>
