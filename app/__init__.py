@@ -1,11 +1,10 @@
 import os
 from flask import Flask, render_template, send_from_directory
 from dotenv import load_dotenv
-
+from flask import jsonify
 load_dotenv()
 
 app = Flask(__name__)
-
 
 
 @app.route('/')
@@ -26,3 +25,10 @@ def contact():
 @app.route('/projects')
 def projects():
     return render_template('projects.html', title="Projects", url=os.getenv("URL"))
+
+
+@app.route('/health')
+def resp():
+    resp = jsonify(success=True)
+    resp.status_code = 200
+    return resp

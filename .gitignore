@@ -1,7 +1,8 @@
 .venv
 __pycache__
 *.pyc
-.env
+*.env
 /python3-virtualenv
 .vscode
 /venv
+.DS_Store
