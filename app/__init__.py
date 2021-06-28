@@ -68,7 +68,7 @@ def register():
     ## TODO: Return a restister page
     return "Register Page not yet implemented", 501
     
-    @app.route('/login', methods=('GET', 'POST'))
+@app.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
         username = request.form.get('username')
