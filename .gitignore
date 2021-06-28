@@ -6,3 +6,6 @@ __pycache__
 .vscode
 /venv
 .DS_Store
+flask.sqlite 
+app/*.sql
+app/db.py
