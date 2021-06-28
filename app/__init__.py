@@ -2,14 +2,13 @@ import os
 from . import db
 from flask import Flask, render_template, request, send_from_directory, jsonify
 from dotenv import load_dotenv
-from werkzeug.security import generate_password_hash
-
+from werkzeug.security import generate_password_hash, check_password_hash   
+from app.db import get_db
 load_dotenv()
 
 app = Flask(__name__)
 app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
 db.init_app(app)
-from app.db import get_db
 
 @app.route('/')
 def index():
@@ -47,9 +46,9 @@ def register():
         error = None
 
         if not username:
-            error = 'Username is required.'
+            error = 'Username is required.\n'
         elif not password:
-            error = 'Password is required.'
+            error = 'Password is required.\n'
         elif db.execute(
             'SELECT id FROM user WHERE username = ?', (username,)
         ).fetchone() is not None:
@@ -78,12 +77,13 @@ def login():
         user = db.execute(
             'SELECT * FROM user WHERE username = ?', (username,)
         ).fetchone()
-
+        print(username, password)
+        print(user)
         if user is None:
-            error = 'Incorrect username.'
+            error = 'Incorrect username.\n'
         elif not check_password_hash(user['password'], password):
-            error = 'Incorrect password.'
-
+            error = 'Incorrect password.\n'
+        
         if error is None:
             return "Login Successful", 200 
         else:
