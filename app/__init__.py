@@ -1,14 +1,18 @@
 import os
-from . import db
 from flask import Flask, render_template, request, send_from_directory, jsonify
 from dotenv import load_dotenv
-from werkzeug.security import generate_password_hash, check_password_hash   
-from app.db import get_db
+from werkzeug.security import generate_password_hash, check_password_hash
 load_dotenv()
-
 app = Flask(__name__)
 app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
+print(app)
+from . import db
+
 db.init_app(app)
+
+
+
+from app.db import get_db
 
 @app.route('/')
 def index():
@@ -64,9 +68,10 @@ def register():
         else:
             return error, 418
 
-    ## TODO: Return a restister page
+    # TODO: Return a restister page
     return "Register Page not yet implemented", 501
-    
+
+
 @app.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
@@ -83,11 +88,11 @@ def login():
             error = 'Incorrect username.\n'
         elif not check_password_hash(user['password'], password):
             error = 'Incorrect password.\n'
-        
+
         if error is None:
-            return "Login Successful", 200 
+            return "Login Successful", 200
         else:
             return error, 418
-    
-    ## TODO: Return a login page
+
+    # TODO: Return a login page
     return "Login Page not yet implemented", 501
