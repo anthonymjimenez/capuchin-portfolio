@@ -2,12 +2,11 @@ import os
 from flask import Flask, render_template, request, send_from_directory, jsonify
 from dotenv import load_dotenv
 from werkzeug.security import generate_password_hash, check_password_hash
+from . import db
+
 load_dotenv()
 app = Flask(__name__)
 app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
-print(app)
-from . import db
-
 db.init_app(app)
 
 
