@@ -1,11 +1,12 @@
-FROM python:3.9.1
+FROM python:3.8-slim-buster
 
 RUN mkdir /myportfolio
 COPY requirements.txt /myportfolio
 WORKDIR /myportfolio
-RUN pip3 install -r requirements.txt
+RUN pip3 install flask_sqlalchemy Flask-Migrate psycopg2-binary gunicorn
+RUN  pip3 install -r requirements.txt
 
-COPY . /capuchinportfolio
+COPY . /myportfolio
 
 RUN chmod u+x ./entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
