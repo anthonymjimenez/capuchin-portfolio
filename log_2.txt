@@ -1,0 +1,1251 @@
+-- Logs begin at Fri 2021-07-09 16:34:07 UTC, end at Fri 2021-07-09 16:48:19 UTC. --
+Jul 09 16:34:32 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Started Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jul 09 16:34:32 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:32 +0000] [2289] [INFO] Starting gunicorn 19.9.0
+Jul 09 16:34:32 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:32 +0000] [2289] [INFO] Listening at: http://127.0.0.1:5000 (2289)
+Jul 09 16:34:32 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:32 +0000] [2289] [INFO] Using worker: sync
+Jul 09 16:34:32 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:32 +0000] [2292] [INFO] Booting worker with pid: 2292
+Jul 09 16:34:32 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:32 +0000] [2293] [INFO] Booting worker with pid: 2293
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:33 +0000] [2295] [INFO] Booting worker with pid: 2295
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:33 +0000] [2296] [INFO] Booting worker with pid: 2296
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:33 +0000] [2292] [ERROR] Exception in worker process
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: Traceback (most recent call last):
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     worker.init_process()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.load_wsgi()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.callable = self.load()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     return self.load_wsgiapp()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     return util.import_app(self.app_uri)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     __import__(module)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     from app import app
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:33 +0000] [2292] [INFO] Worker exiting (pid: 2292)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:33 +0000] [2293] [ERROR] Exception in worker process
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: Traceback (most recent call last):
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     worker.init_process()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.load_wsgi()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.callable = self.load()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     return self.load_wsgiapp()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     return util.import_app(self.app_uri)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     __import__(module)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     from app import app
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:33 +0000] [2293] [INFO] Worker exiting (pid: 2293)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:33 +0000] [2295] [ERROR] Exception in worker process
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: Traceback (most recent call last):
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     worker.init_process()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.load_wsgi()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.callable = self.load()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     return self.load_wsgiapp()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     return util.import_app(self.app_uri)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     __import__(module)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     from app import app
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:33 +0000] [2295] [INFO] Worker exiting (pid: 2295)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:33 +0000] [2296] [ERROR] Exception in worker process
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: Traceback (most recent call last):
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     worker.init_process()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.load_wsgi()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.callable = self.load()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     return self.load_wsgiapp()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     return util.import_app(self.app_uri)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     __import__(module)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     from app import app
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: [2021-07-09 16:34:33 +0000] [2296] [INFO] Worker exiting (pid: 2296)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: Traceback (most recent call last):
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 210, in run
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.sleep()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 360, in sleep
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.reap_workers()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: During handling of the above exception, another exception occurred:
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: Traceback (most recent call last):
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/bin/gunicorn", line 8, in <module>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     sys.exit(run())
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 223, in run
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     super(Application, self).run()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     Arbiter(self).run()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 232, in run
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 345, in halt
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.stop()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     time.sleep(0.1)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     self.reap_workers()
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal bash[2289]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Main process exited, code=exited, status=1/FAILURE
+Jul 09 16:34:33 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Failed with result 'exit-code'.
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit myportfolio.service has entered the 'failed' state with result 'exit-code'.
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Service RestartSec=100ms expired, scheduling restart.
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Scheduled restart job, restart counter is at 6.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Automatic restarting of the unit myportfolio.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Stopped Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished shutting down.
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Started Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:34 +0000] [2301] [INFO] Starting gunicorn 19.9.0
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:34 +0000] [2301] [INFO] Listening at: http://127.0.0.1:5000 (2301)
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:34 +0000] [2301] [INFO] Using worker: sync
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:34 +0000] [2304] [INFO] Booting worker with pid: 2304
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:34 +0000] [2305] [INFO] Booting worker with pid: 2305
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:34 +0000] [2306] [INFO] Booting worker with pid: 2306
+Jul 09 16:34:34 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:34 +0000] [2308] [INFO] Booting worker with pid: 2308
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:35 +0000] [2304] [ERROR] Exception in worker process
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: Traceback (most recent call last):
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     worker.init_process()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.load_wsgi()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.callable = self.load()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     return self.load_wsgiapp()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     return util.import_app(self.app_uri)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     __import__(module)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     from app import app
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:35 +0000] [2304] [INFO] Worker exiting (pid: 2304)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:35 +0000] [2305] [ERROR] Exception in worker process
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: Traceback (most recent call last):
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     worker.init_process()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.load_wsgi()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.callable = self.load()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     return self.load_wsgiapp()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     return util.import_app(self.app_uri)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     __import__(module)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     from app import app
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:35 +0000] [2305] [INFO] Worker exiting (pid: 2305)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:35 +0000] [2306] [ERROR] Exception in worker process
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: Traceback (most recent call last):
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     worker.init_process()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.load_wsgi()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.callable = self.load()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     return self.load_wsgiapp()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     return util.import_app(self.app_uri)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     __import__(module)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     from app import app
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:35 +0000] [2306] [INFO] Worker exiting (pid: 2306)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: Traceback (most recent call last):
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 210, in run
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.sleep()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 360, in sleep
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.reap_workers()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: During handling of the above exception, another exception occurred:
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: Traceback (most recent call last):
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/bin/gunicorn", line 8, in <module>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     sys.exit(run())
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 223, in run
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     super(Application, self).run()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     Arbiter(self).run()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 232, in run
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 345, in halt
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.stop()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     time.sleep(0.1)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.reap_workers()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:35 +0000] [2308] [ERROR] Exception in worker process
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: Traceback (most recent call last):
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     worker.init_process()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.load_wsgi()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     self.callable = self.load()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     return self.load_wsgiapp()
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     return util.import_app(self.app_uri)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     __import__(module)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     from app import app
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal bash[2301]: [2021-07-09 16:34:35 +0000] [2308] [INFO] Worker exiting (pid: 2308)
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Main process exited, code=exited, status=1/FAILURE
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Failed with result 'exit-code'.
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit myportfolio.service has entered the 'failed' state with result 'exit-code'.
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Service RestartSec=100ms expired, scheduling restart.
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Scheduled restart job, restart counter is at 7.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Automatic restarting of the unit myportfolio.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Stopped Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished shutting down.
+Jul 09 16:34:35 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Started Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:36 +0000] [2313] [INFO] Starting gunicorn 19.9.0
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:36 +0000] [2313] [INFO] Listening at: http://127.0.0.1:5000 (2313)
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:36 +0000] [2313] [INFO] Using worker: sync
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:36 +0000] [2316] [INFO] Booting worker with pid: 2316
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:36 +0000] [2317] [INFO] Booting worker with pid: 2317
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:36 +0000] [2320] [INFO] Booting worker with pid: 2320
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:36 +0000] [2319] [INFO] Booting worker with pid: 2319
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:36 +0000] [2316] [ERROR] Exception in worker process
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: Traceback (most recent call last):
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     worker.init_process()
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.load_wsgi()
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.callable = self.load()
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     return self.load_wsgiapp()
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     return util.import_app(self.app_uri)
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     __import__(module)
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     from app import app
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:36 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:36 +0000] [2316] [INFO] Worker exiting (pid: 2316)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:37 +0000] [2317] [ERROR] Exception in worker process
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: Traceback (most recent call last):
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     worker.init_process()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.load_wsgi()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.callable = self.load()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     return self.load_wsgiapp()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     return util.import_app(self.app_uri)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     __import__(module)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     from app import app
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:37 +0000] [2317] [INFO] Worker exiting (pid: 2317)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:37 +0000] [2320] [ERROR] Exception in worker process
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: Traceback (most recent call last):
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     worker.init_process()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.load_wsgi()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.callable = self.load()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     return self.load_wsgiapp()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     return util.import_app(self.app_uri)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     __import__(module)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     from app import app
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:37 +0000] [2320] [INFO] Worker exiting (pid: 2320)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:37 +0000] [2319] [ERROR] Exception in worker process
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: Traceback (most recent call last):
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     worker.init_process()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.load_wsgi()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.callable = self.load()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     return self.load_wsgiapp()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     return util.import_app(self.app_uri)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     __import__(module)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     from app import app
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: [2021-07-09 16:34:37 +0000] [2319] [INFO] Worker exiting (pid: 2319)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: Traceback (most recent call last):
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 210, in run
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.sleep()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 360, in sleep
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.reap_workers()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: During handling of the above exception, another exception occurred:
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: Traceback (most recent call last):
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/bin/gunicorn", line 8, in <module>
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     sys.exit(run())
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 223, in run
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     super(Application, self).run()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     Arbiter(self).run()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 232, in run
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 345, in halt
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.stop()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     time.sleep(0.1)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     self.reap_workers()
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2313]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Main process exited, code=exited, status=1/FAILURE
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Failed with result 'exit-code'.
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit myportfolio.service has entered the 'failed' state with result 'exit-code'.
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Service RestartSec=100ms expired, scheduling restart.
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Scheduled restart job, restart counter is at 8.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Automatic restarting of the unit myportfolio.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Stopped Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished shutting down.
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Started Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:37 +0000] [2325] [INFO] Starting gunicorn 19.9.0
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:37 +0000] [2325] [INFO] Listening at: http://127.0.0.1:5000 (2325)
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:37 +0000] [2325] [INFO] Using worker: sync
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:37 +0000] [2328] [INFO] Booting worker with pid: 2328
+Jul 09 16:34:37 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:37 +0000] [2329] [INFO] Booting worker with pid: 2329
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:38 +0000] [2330] [INFO] Booting worker with pid: 2330
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:38 +0000] [2332] [INFO] Booting worker with pid: 2332
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:38 +0000] [2328] [ERROR] Exception in worker process
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: Traceback (most recent call last):
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     worker.init_process()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.load_wsgi()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.callable = self.load()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     return self.load_wsgiapp()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     return util.import_app(self.app_uri)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     __import__(module)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     from app import app
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:38 +0000] [2328] [INFO] Worker exiting (pid: 2328)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:38 +0000] [2329] [ERROR] Exception in worker process
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: Traceback (most recent call last):
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     worker.init_process()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.load_wsgi()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.callable = self.load()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     return self.load_wsgiapp()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     return util.import_app(self.app_uri)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     __import__(module)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     from app import app
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:38 +0000] [2329] [INFO] Worker exiting (pid: 2329)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:38 +0000] [2330] [ERROR] Exception in worker process
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: Traceback (most recent call last):
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     worker.init_process()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.load_wsgi()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.callable = self.load()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     return self.load_wsgiapp()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     return util.import_app(self.app_uri)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     __import__(module)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     from app import app
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:38 +0000] [2330] [INFO] Worker exiting (pid: 2330)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: Traceback (most recent call last):
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 210, in run
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.sleep()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 360, in sleep
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.reap_workers()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: During handling of the above exception, another exception occurred:
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: Traceback (most recent call last):
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/bin/gunicorn", line 8, in <module>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     sys.exit(run())
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 223, in run
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     super(Application, self).run()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     Arbiter(self).run()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 232, in run
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 345, in halt
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.stop()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     time.sleep(0.1)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.reap_workers()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:38 +0000] [2332] [ERROR] Exception in worker process
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: Traceback (most recent call last):
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     worker.init_process()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.load_wsgi()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     self.callable = self.load()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     return self.load_wsgiapp()
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     return util.import_app(self.app_uri)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     __import__(module)
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     from app import app
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:38 ip-172-31-27-180.us-east-2.compute.internal bash[2325]: [2021-07-09 16:34:38 +0000] [2332] [INFO] Worker exiting (pid: 2332)
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Main process exited, code=exited, status=1/FAILURE
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Failed with result 'exit-code'.
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit myportfolio.service has entered the 'failed' state with result 'exit-code'.
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Service RestartSec=100ms expired, scheduling restart.
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Scheduled restart job, restart counter is at 9.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Automatic restarting of the unit myportfolio.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Stopped Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished shutting down.
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Started Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:39 +0000] [2337] [INFO] Starting gunicorn 19.9.0
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:39 +0000] [2337] [INFO] Listening at: http://127.0.0.1:5000 (2337)
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:39 +0000] [2337] [INFO] Using worker: sync
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:39 +0000] [2340] [INFO] Booting worker with pid: 2340
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:39 +0000] [2341] [INFO] Booting worker with pid: 2341
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:39 +0000] [2342] [INFO] Booting worker with pid: 2342
+Jul 09 16:34:39 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:39 +0000] [2344] [INFO] Booting worker with pid: 2344
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:40 +0000] [2340] [ERROR] Exception in worker process
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: Traceback (most recent call last):
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     worker.init_process()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.load_wsgi()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.callable = self.load()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     return self.load_wsgiapp()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     return util.import_app(self.app_uri)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     __import__(module)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     from app import app
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:40 +0000] [2340] [INFO] Worker exiting (pid: 2340)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:40 +0000] [2341] [ERROR] Exception in worker process
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: Traceback (most recent call last):
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     worker.init_process()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.load_wsgi()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.callable = self.load()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     return self.load_wsgiapp()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     return util.import_app(self.app_uri)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     __import__(module)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     from app import app
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:40 +0000] [2341] [INFO] Worker exiting (pid: 2341)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:40 +0000] [2342] [ERROR] Exception in worker process
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: Traceback (most recent call last):
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     worker.init_process()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.load_wsgi()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.callable = self.load()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     return self.load_wsgiapp()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     return util.import_app(self.app_uri)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     __import__(module)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     from app import app
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:40 +0000] [2342] [INFO] Worker exiting (pid: 2342)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: Traceback (most recent call last):
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 210, in run
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.sleep()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 360, in sleep
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.reap_workers()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: During handling of the above exception, another exception occurred:
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: Traceback (most recent call last):
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/bin/gunicorn", line 8, in <module>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     sys.exit(run())
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 223, in run
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     super(Application, self).run()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     Arbiter(self).run()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 232, in run
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 345, in halt
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.stop()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     time.sleep(0.1)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.reap_workers()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:40 +0000] [2344] [ERROR] Exception in worker process
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: Traceback (most recent call last):
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     worker.init_process()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.load_wsgi()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     self.callable = self.load()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     return self.load_wsgiapp()
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     return util.import_app(self.app_uri)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     __import__(module)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     from app import app
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal bash[2337]: [2021-07-09 16:34:40 +0000] [2344] [INFO] Worker exiting (pid: 2344)
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Main process exited, code=exited, status=1/FAILURE
+Jul 09 16:34:40 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Failed with result 'exit-code'.
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit myportfolio.service has entered the 'failed' state with result 'exit-code'.
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Service RestartSec=100ms expired, scheduling restart.
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Scheduled restart job, restart counter is at 10.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Automatic restarting of the unit myportfolio.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Stopped Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished shutting down.
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Started Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:41 +0000] [2349] [INFO] Starting gunicorn 19.9.0
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:41 +0000] [2349] [INFO] Listening at: http://127.0.0.1:5000 (2349)
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:41 +0000] [2349] [INFO] Using worker: sync
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:41 +0000] [2352] [INFO] Booting worker with pid: 2352
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:41 +0000] [2353] [INFO] Booting worker with pid: 2353
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:41 +0000] [2354] [INFO] Booting worker with pid: 2354
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:41 +0000] [2355] [INFO] Booting worker with pid: 2355
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: systemd-hostnamed.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit systemd-hostnamed.service has successfully entered the 'dead' state.
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:41 +0000] [2352] [ERROR] Exception in worker process
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: Traceback (most recent call last):
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     worker.init_process()
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.load_wsgi()
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.callable = self.load()
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     return self.load_wsgiapp()
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     return util.import_app(self.app_uri)
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     __import__(module)
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     from app import app
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:41 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:41 +0000] [2352] [INFO] Worker exiting (pid: 2352)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:42 +0000] [2353] [ERROR] Exception in worker process
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: Traceback (most recent call last):
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     worker.init_process()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.load_wsgi()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.callable = self.load()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     return self.load_wsgiapp()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     return util.import_app(self.app_uri)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     __import__(module)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     from app import app
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:42 +0000] [2353] [INFO] Worker exiting (pid: 2353)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:42 +0000] [2354] [ERROR] Exception in worker process
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: Traceback (most recent call last):
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     worker.init_process()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.load_wsgi()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.callable = self.load()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     return self.load_wsgiapp()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     return util.import_app(self.app_uri)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     __import__(module)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     from app import app
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:42 +0000] [2354] [INFO] Worker exiting (pid: 2354)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: Traceback (most recent call last):
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 210, in run
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.sleep()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 360, in sleep
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.reap_workers()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: During handling of the above exception, another exception occurred:
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: Traceback (most recent call last):
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/bin/gunicorn", line 8, in <module>
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     sys.exit(run())
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 223, in run
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     super(Application, self).run()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     Arbiter(self).run()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 232, in run
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 345, in halt
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.stop()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     time.sleep(0.1)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.reap_workers()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:42 +0000] [2355] [ERROR] Exception in worker process
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: Traceback (most recent call last):
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     worker.init_process()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.load_wsgi()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.wsgi = self.app.wsgi()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     self.callable = self.load()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     return self.load_wsgiapp()
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     return util.import_app(self.app_uri)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/python3-virtualenv/lib64/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     __import__(module)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/wsgi.py", line 1, in <module>
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     from app import app
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:   File "/home/centos/capuchin-portfolio/app/__init__.py", line 5, in <module>
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]:     from flask_sqlalchemy import SQLAlchemy
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal bash[2349]: [2021-07-09 16:34:42 +0000] [2355] [INFO] Worker exiting (pid: 2355)
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Main process exited, code=exited, status=1/FAILURE
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Failed with result 'exit-code'.
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit myportfolio.service has entered the 'failed' state with result 'exit-code'.
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Service RestartSec=100ms expired, scheduling restart.
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Scheduled restart job, restart counter is at 11.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Automatic restarting of the unit myportfolio.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Stopped Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has finished shutting down.
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Start request repeated too quickly.
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: myportfolio.service: Failed with result 'exit-code'.
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit myportfolio.service has entered the 'failed' state with result 'exit-code'.
+Jul 09 16:34:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Failed to start Gunicorn instance to serve my portfolio.
+-- Subject: Unit myportfolio.service has failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit myportfolio.service has failed.
+-- 
+-- The result is failed.
+Jul 09 16:35:37 ip-172-31-27-180.us-east-2.compute.internal sshd[2402]: Accepted publickey for centos from 151.205.100.26 port 58008 ssh2: RSA SHA256:FkYAzBPJM/Wc848P+FSN4otCNEeDz3Xd0+cTXsgwLzQ
+Jul 09 16:35:37 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Started Session 3 of user centos.
+-- Subject: Unit session-3.scope has finished start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit session-3.scope has finished starting up.
+-- 
+-- The start-up result is done.
+Jul 09 16:35:37 ip-172-31-27-180.us-east-2.compute.internal systemd-logind[738]: New session 3 of user centos.
+-- Subject: A new session 3 has been created for user centos
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- Documentation: https://www.freedesktop.org/wiki/Software/systemd/multiseat
+-- 
+-- A new session with the ID 3 has been created for the user centos.
+-- 
+-- The leading process of the session is 2402.
+Jul 09 16:35:37 ip-172-31-27-180.us-east-2.compute.internal sshd[2402]: pam_unix(sshd:session): session opened for user centos by (uid=0)
+Jul 09 16:36:48 ip-172-31-27-180.us-east-2.compute.internal systemd[2016]: Starting Mark boot as successful...
+-- Subject: Unit UNIT has begun start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit UNIT has begun starting up.
+Jul 09 16:36:48 ip-172-31-27-180.us-east-2.compute.internal systemd[2016]: grub-boot-success.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit UNIT has successfully entered the 'dead' state.
+Jul 09 16:36:48 ip-172-31-27-180.us-east-2.compute.internal systemd[2016]: Started Mark boot as successful.
+-- Subject: Unit UNIT has finished start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit UNIT has finished starting up.
+-- 
+-- The start-up result is done.
+Jul 09 16:38:57 ip-172-31-27-180.us-east-2.compute.internal sshd[2442]: Received disconnect from 107.189.30.221 port 47752:11: Bye Bye [preauth]
+Jul 09 16:38:57 ip-172-31-27-180.us-east-2.compute.internal sshd[2442]: Disconnected from authenticating user root 107.189.30.221 port 47752 [preauth]
+Jul 09 16:38:58 ip-172-31-27-180.us-east-2.compute.internal sshd[2444]: Received disconnect from 107.189.30.221 port 48810:11: Bye Bye [preauth]
+Jul 09 16:38:58 ip-172-31-27-180.us-east-2.compute.internal sshd[2444]: Disconnected from authenticating user root 107.189.30.221 port 48810 [preauth]
+Jul 09 16:38:59 ip-172-31-27-180.us-east-2.compute.internal sshd[2446]: Invalid user ubuntu from 107.189.30.221 port 49686
+Jul 09 16:38:59 ip-172-31-27-180.us-east-2.compute.internal sshd[2446]: Received disconnect from 107.189.30.221 port 49686:11: Bye Bye [preauth]
+Jul 09 16:38:59 ip-172-31-27-180.us-east-2.compute.internal sshd[2446]: Disconnected from invalid user ubuntu 107.189.30.221 port 49686 [preauth]
+Jul 09 16:39:00 ip-172-31-27-180.us-east-2.compute.internal sshd[2448]: Invalid user ansible from 107.189.30.221 port 50374
+Jul 09 16:39:00 ip-172-31-27-180.us-east-2.compute.internal sshd[2448]: Received disconnect from 107.189.30.221 port 50374:11: Bye Bye [preauth]
+Jul 09 16:39:00 ip-172-31-27-180.us-east-2.compute.internal sshd[2448]: Disconnected from invalid user ansible 107.189.30.221 port 50374 [preauth]
+Jul 09 16:39:01 ip-172-31-27-180.us-east-2.compute.internal sshd[2450]: Invalid user test from 107.189.30.221 port 51312
+Jul 09 16:39:01 ip-172-31-27-180.us-east-2.compute.internal sshd[2450]: Received disconnect from 107.189.30.221 port 51312:11: Bye Bye [preauth]
+Jul 09 16:39:01 ip-172-31-27-180.us-east-2.compute.internal sshd[2450]: Disconnected from invalid user test 107.189.30.221 port 51312 [preauth]
+Jul 09 16:39:01 ip-172-31-27-180.us-east-2.compute.internal sshd[2452]: Invalid user deploy from 107.189.30.221 port 52254
+Jul 09 16:39:02 ip-172-31-27-180.us-east-2.compute.internal sshd[2452]: Received disconnect from 107.189.30.221 port 52254:11: Bye Bye [preauth]
+Jul 09 16:39:02 ip-172-31-27-180.us-east-2.compute.internal sshd[2452]: Disconnected from invalid user deploy 107.189.30.221 port 52254 [preauth]
+Jul 09 16:39:02 ip-172-31-27-180.us-east-2.compute.internal sshd[2454]: Invalid user es from 107.189.30.221 port 53206
+Jul 09 16:39:02 ip-172-31-27-180.us-east-2.compute.internal sshd[2454]: Received disconnect from 107.189.30.221 port 53206:11: Bye Bye [preauth]
+Jul 09 16:39:02 ip-172-31-27-180.us-east-2.compute.internal sshd[2454]: Disconnected from invalid user es 107.189.30.221 port 53206 [preauth]
+Jul 09 16:39:03 ip-172-31-27-180.us-east-2.compute.internal sshd[2456]: Invalid user oracle from 107.189.30.221 port 54092
+Jul 09 16:39:03 ip-172-31-27-180.us-east-2.compute.internal sshd[2456]: Received disconnect from 107.189.30.221 port 54092:11: Bye Bye [preauth]
+Jul 09 16:39:03 ip-172-31-27-180.us-east-2.compute.internal sshd[2456]: Disconnected from invalid user oracle 107.189.30.221 port 54092 [preauth]
+Jul 09 16:39:04 ip-172-31-27-180.us-east-2.compute.internal sshd[2458]: Invalid user mysql from 107.189.30.221 port 54980
+Jul 09 16:39:04 ip-172-31-27-180.us-east-2.compute.internal sshd[2458]: Received disconnect from 107.189.30.221 port 54980:11: Bye Bye [preauth]
+Jul 09 16:39:04 ip-172-31-27-180.us-east-2.compute.internal sshd[2458]: Disconnected from invalid user mysql 107.189.30.221 port 54980 [preauth]
+Jul 09 16:39:05 ip-172-31-27-180.us-east-2.compute.internal sshd[2460]: Invalid user chia from 107.189.30.221 port 55992
+Jul 09 16:39:05 ip-172-31-27-180.us-east-2.compute.internal sshd[2460]: Received disconnect from 107.189.30.221 port 55992:11: Bye Bye [preauth]
+Jul 09 16:39:05 ip-172-31-27-180.us-east-2.compute.internal sshd[2460]: Disconnected from invalid user chia 107.189.30.221 port 55992 [preauth]
+Jul 09 16:39:06 ip-172-31-27-180.us-east-2.compute.internal sshd[2462]: Invalid user esuser from 107.189.30.221 port 56960
+Jul 09 16:39:06 ip-172-31-27-180.us-east-2.compute.internal sshd[2462]: Received disconnect from 107.189.30.221 port 56960:11: Bye Bye [preauth]
+Jul 09 16:39:06 ip-172-31-27-180.us-east-2.compute.internal sshd[2462]: Disconnected from invalid user esuser 107.189.30.221 port 56960 [preauth]
+Jul 09 16:39:06 ip-172-31-27-180.us-east-2.compute.internal sshd[2464]: Invalid user spark from 107.189.30.221 port 57624
+Jul 09 16:39:07 ip-172-31-27-180.us-east-2.compute.internal sshd[2464]: Received disconnect from 107.189.30.221 port 57624:11: Bye Bye [preauth]
+Jul 09 16:39:07 ip-172-31-27-180.us-east-2.compute.internal sshd[2464]: Disconnected from invalid user spark 107.189.30.221 port 57624 [preauth]
+Jul 09 16:39:07 ip-172-31-27-180.us-east-2.compute.internal sshd[2466]: Invalid user mcserver from 107.189.30.221 port 58226
+Jul 09 16:39:07 ip-172-31-27-180.us-east-2.compute.internal sshd[2466]: Received disconnect from 107.189.30.221 port 58226:11: Bye Bye [preauth]
+Jul 09 16:39:07 ip-172-31-27-180.us-east-2.compute.internal sshd[2466]: Disconnected from invalid user mcserver 107.189.30.221 port 58226 [preauth]
+Jul 09 16:39:08 ip-172-31-27-180.us-east-2.compute.internal sshd[2468]: Invalid user mc from 107.189.30.221 port 59282
+Jul 09 16:39:08 ip-172-31-27-180.us-east-2.compute.internal sshd[2468]: Received disconnect from 107.189.30.221 port 59282:11: Bye Bye [preauth]
+Jul 09 16:39:08 ip-172-31-27-180.us-east-2.compute.internal sshd[2468]: Disconnected from invalid user mc 107.189.30.221 port 59282 [preauth]
+Jul 09 16:39:09 ip-172-31-27-180.us-east-2.compute.internal sshd[2470]: Invalid user minecraft from 107.189.30.221 port 60168
+Jul 09 16:39:09 ip-172-31-27-180.us-east-2.compute.internal sshd[2470]: Received disconnect from 107.189.30.221 port 60168:11: Bye Bye [preauth]
+Jul 09 16:39:09 ip-172-31-27-180.us-east-2.compute.internal sshd[2470]: Disconnected from invalid user minecraft 107.189.30.221 port 60168 [preauth]
+Jul 09 16:39:10 ip-172-31-27-180.us-east-2.compute.internal sshd[2472]: Invalid user minecraft from 107.189.30.221 port 32830
+Jul 09 16:39:10 ip-172-31-27-180.us-east-2.compute.internal sshd[2472]: Received disconnect from 107.189.30.221 port 32830:11: Bye Bye [preauth]
+Jul 09 16:39:10 ip-172-31-27-180.us-east-2.compute.internal sshd[2472]: Disconnected from invalid user minecraft 107.189.30.221 port 32830 [preauth]
+Jul 09 16:39:11 ip-172-31-27-180.us-east-2.compute.internal sshd[2474]: Invalid user mcserver from 107.189.30.221 port 33604
+Jul 09 16:39:11 ip-172-31-27-180.us-east-2.compute.internal sshd[2474]: Received disconnect from 107.189.30.221 port 33604:11: Bye Bye [preauth]
+Jul 09 16:39:11 ip-172-31-27-180.us-east-2.compute.internal sshd[2474]: Disconnected from invalid user mcserver 107.189.30.221 port 33604 [preauth]
+Jul 09 16:39:11 ip-172-31-27-180.us-east-2.compute.internal sshd[2476]: Invalid user mc from 107.189.30.221 port 34342
+Jul 09 16:39:12 ip-172-31-27-180.us-east-2.compute.internal sshd[2476]: Received disconnect from 107.189.30.221 port 34342:11: Bye Bye [preauth]
+Jul 09 16:39:12 ip-172-31-27-180.us-east-2.compute.internal sshd[2476]: Disconnected from invalid user mc 107.189.30.221 port 34342 [preauth]
+Jul 09 16:39:12 ip-172-31-27-180.us-east-2.compute.internal sshd[2478]: Invalid user ubuntu from 107.189.30.221 port 35288
+Jul 09 16:39:12 ip-172-31-27-180.us-east-2.compute.internal sshd[2478]: Received disconnect from 107.189.30.221 port 35288:11: Bye Bye [preauth]
+Jul 09 16:39:12 ip-172-31-27-180.us-east-2.compute.internal sshd[2478]: Disconnected from invalid user ubuntu 107.189.30.221 port 35288 [preauth]
+Jul 09 16:39:13 ip-172-31-27-180.us-east-2.compute.internal sshd[2480]: Invalid user ansible from 107.189.30.221 port 36090
+Jul 09 16:39:13 ip-172-31-27-180.us-east-2.compute.internal sshd[2480]: Received disconnect from 107.189.30.221 port 36090:11: Bye Bye [preauth]
+Jul 09 16:39:13 ip-172-31-27-180.us-east-2.compute.internal sshd[2480]: Disconnected from invalid user ansible 107.189.30.221 port 36090 [preauth]
+Jul 09 16:39:14 ip-172-31-27-180.us-east-2.compute.internal sudo[2484]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/bin/cat /etc/systemd/system/myportfolio.service
+Jul 09 16:39:14 ip-172-31-27-180.us-east-2.compute.internal sudo[2484]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:39:14 ip-172-31-27-180.us-east-2.compute.internal sudo[2484]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:39:14 ip-172-31-27-180.us-east-2.compute.internal sudo[2484]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:39:14 ip-172-31-27-180.us-east-2.compute.internal sshd[2482]: Invalid user es from 107.189.30.221 port 36750
+Jul 09 16:39:14 ip-172-31-27-180.us-east-2.compute.internal sshd[2482]: Received disconnect from 107.189.30.221 port 36750:11: Bye Bye [preauth]
+Jul 09 16:39:14 ip-172-31-27-180.us-east-2.compute.internal sshd[2482]: Disconnected from invalid user es 107.189.30.221 port 36750 [preauth]
+Jul 09 16:39:15 ip-172-31-27-180.us-east-2.compute.internal sshd[2487]: Invalid user esuser from 107.189.30.221 port 37776
+Jul 09 16:39:15 ip-172-31-27-180.us-east-2.compute.internal sshd[2487]: Received disconnect from 107.189.30.221 port 37776:11: Bye Bye [preauth]
+Jul 09 16:39:15 ip-172-31-27-180.us-east-2.compute.internal sshd[2487]: Disconnected from invalid user esuser 107.189.30.221 port 37776 [preauth]
+Jul 09 16:39:16 ip-172-31-27-180.us-east-2.compute.internal sshd[2489]: Invalid user oracle from 107.189.30.221 port 38686
+Jul 09 16:39:16 ip-172-31-27-180.us-east-2.compute.internal sshd[2489]: Received disconnect from 107.189.30.221 port 38686:11: Bye Bye [preauth]
+Jul 09 16:39:16 ip-172-31-27-180.us-east-2.compute.internal sshd[2489]: Disconnected from invalid user oracle 107.189.30.221 port 38686 [preauth]
+Jul 09 16:39:17 ip-172-31-27-180.us-east-2.compute.internal sshd[2491]: Invalid user postgres from 107.189.30.221 port 39578
+Jul 09 16:39:17 ip-172-31-27-180.us-east-2.compute.internal sshd[2491]: Received disconnect from 107.189.30.221 port 39578:11: Bye Bye [preauth]
+Jul 09 16:39:17 ip-172-31-27-180.us-east-2.compute.internal sshd[2491]: Disconnected from invalid user postgres 107.189.30.221 port 39578 [preauth]
+Jul 09 16:39:17 ip-172-31-27-180.us-east-2.compute.internal sshd[2493]: Invalid user deploy from 107.189.30.221 port 40376
+Jul 09 16:39:18 ip-172-31-27-180.us-east-2.compute.internal sshd[2493]: Received disconnect from 107.189.30.221 port 40376:11: Bye Bye [preauth]
+Jul 09 16:39:18 ip-172-31-27-180.us-east-2.compute.internal sshd[2493]: Disconnected from invalid user deploy 107.189.30.221 port 40376 [preauth]
+Jul 09 16:39:18 ip-172-31-27-180.us-east-2.compute.internal sshd[2495]: Invalid user test from 107.189.30.221 port 40976
+Jul 09 16:39:18 ip-172-31-27-180.us-east-2.compute.internal sshd[2495]: Received disconnect from 107.189.30.221 port 40976:11: Bye Bye [preauth]
+Jul 09 16:39:18 ip-172-31-27-180.us-east-2.compute.internal sshd[2495]: Disconnected from invalid user test 107.189.30.221 port 40976 [preauth]
+Jul 09 16:39:19 ip-172-31-27-180.us-east-2.compute.internal sshd[2497]: Invalid user mysql from 107.189.30.221 port 41660
+Jul 09 16:39:19 ip-172-31-27-180.us-east-2.compute.internal sshd[2497]: Received disconnect from 107.189.30.221 port 41660:11: Bye Bye [preauth]
+Jul 09 16:39:19 ip-172-31-27-180.us-east-2.compute.internal sshd[2497]: Disconnected from invalid user mysql 107.189.30.221 port 41660 [preauth]
+Jul 09 16:39:20 ip-172-31-27-180.us-east-2.compute.internal sshd[2499]: Received disconnect from 107.189.30.221 port 42664:11: Bye Bye [preauth]
+Jul 09 16:39:20 ip-172-31-27-180.us-east-2.compute.internal sshd[2499]: Disconnected from authenticating user root 107.189.30.221 port 42664 [preauth]
+Jul 09 16:39:21 ip-172-31-27-180.us-east-2.compute.internal sshd[2501]: Received disconnect from 107.189.30.221 port 43458:11: Bye Bye [preauth]
+Jul 09 16:39:21 ip-172-31-27-180.us-east-2.compute.internal sshd[2501]: Disconnected from authenticating user root 107.189.30.221 port 43458 [preauth]
+Jul 09 16:39:22 ip-172-31-27-180.us-east-2.compute.internal sshd[2503]: Received disconnect from 107.189.30.221 port 44454:11: Bye Bye [preauth]
+Jul 09 16:39:22 ip-172-31-27-180.us-east-2.compute.internal sshd[2503]: Disconnected from authenticating user root 107.189.30.221 port 44454 [preauth]
+Jul 09 16:40:09 ip-172-31-27-180.us-east-2.compute.internal sudo[2507]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/bin/vi /etc/systemd/system/myportfolio.service
+Jul 09 16:40:09 ip-172-31-27-180.us-east-2.compute.internal sudo[2507]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:40:09 ip-172-31-27-180.us-east-2.compute.internal sudo[2507]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:40:35 ip-172-31-27-180.us-east-2.compute.internal sudo[2507]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:41:29 ip-172-31-27-180.us-east-2.compute.internal sudo[2516]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jul 09 16:41:29 ip-172-31-27-180.us-east-2.compute.internal sudo[2516]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:41:29 ip-172-31-27-180.us-east-2.compute.internal sudo[2516]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Starting The nginx HTTP and reverse proxy server...
+-- Subject: Unit nginx.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit nginx.service has begun starting up.
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal nginx[2521]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal nginx[2521]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to [::]:443 failed (98: Address already in use)
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to [::]:443 failed (98: Address already in use)
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+Jul 09 16:41:30 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+Jul 09 16:41:31 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to [::]:443 failed (98: Address already in use)
+Jul 09 16:41:31 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+Jul 09 16:41:31 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+Jul 09 16:41:31 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+Jul 09 16:41:31 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to [::]:443 failed (98: Address already in use)
+Jul 09 16:41:31 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+Jul 09 16:41:31 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+Jul 09 16:41:31 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+Jul 09 16:41:32 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to [::]:443 failed (98: Address already in use)
+Jul 09 16:41:32 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+Jul 09 16:41:32 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+Jul 09 16:41:32 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+Jul 09 16:41:32 ip-172-31-27-180.us-east-2.compute.internal nginx[2523]: nginx: [emerg] still could not bind()
+Jul 09 16:41:32 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: nginx.service: Control process exited, code=exited status=1
+Jul 09 16:41:32 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: nginx.service: Failed with result 'exit-code'.
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+Jul 09 16:41:32 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Failed to start The nginx HTTP and reverse proxy server.
+-- Subject: Unit nginx.service has failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit nginx.service has failed.
+-- 
+-- The result is failed.
+Jul 09 16:41:32 ip-172-31-27-180.us-east-2.compute.internal sudo[2516]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:43:07 ip-172-31-27-180.us-east-2.compute.internal sudo[2539]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/bin/yum install netstat
+Jul 09 16:43:07 ip-172-31-27-180.us-east-2.compute.internal sudo[2539]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:43:07 ip-172-31-27-180.us-east-2.compute.internal sudo[2539]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:43:11 ip-172-31-27-180.us-east-2.compute.internal sudo[2539]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:43:30 ip-172-31-27-180.us-east-2.compute.internal sudo[2544]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/bin/yum install net -tool
+Jul 09 16:43:30 ip-172-31-27-180.us-east-2.compute.internal sudo[2544]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:43:30 ip-172-31-27-180.us-east-2.compute.internal sudo[2544]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:43:31 ip-172-31-27-180.us-east-2.compute.internal sudo[2544]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:43:34 ip-172-31-27-180.us-east-2.compute.internal sudo[2548]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/bin/yum install net-tool
+Jul 09 16:43:34 ip-172-31-27-180.us-east-2.compute.internal sudo[2548]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:43:34 ip-172-31-27-180.us-east-2.compute.internal sudo[2548]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:43:36 ip-172-31-27-180.us-east-2.compute.internal sudo[2548]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:43:37 ip-172-31-27-180.us-east-2.compute.internal sudo[2552]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/bin/yum install net-tools
+Jul 09 16:43:37 ip-172-31-27-180.us-east-2.compute.internal sudo[2552]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:43:37 ip-172-31-27-180.us-east-2.compute.internal sudo[2552]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:43:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+-- Subject: Unit run-r314f0c15a19a4f71b78b96d385d2796d.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit run-r314f0c15a19a4f71b78b96d385d2796d.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jul 09 16:43:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: cgroup compatibility translation between legacy and unified hierarchy settings activated. See cgroup-compat debug messages for details.
+Jul 09 16:43:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Starting man-db-cache-update.service...
+-- Subject: Unit man-db-cache-update.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit man-db-cache-update.service has begun starting up.
+Jul 09 16:43:42 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Reloading.
+Jul 09 16:43:44 ip-172-31-27-180.us-east-2.compute.internal sudo[2552]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:43:51 ip-172-31-27-180.us-east-2.compute.internal sudo[13700]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/bin/netstat -plant
+Jul 09 16:43:51 ip-172-31-27-180.us-east-2.compute.internal sudo[13700]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:43:51 ip-172-31-27-180.us-east-2.compute.internal sudo[13700]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:43:51 ip-172-31-27-180.us-east-2.compute.internal sudo[13700]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:43:52 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: man-db-cache-update.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit man-db-cache-update.service has successfully entered the 'dead' state.
+Jul 09 16:43:52 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Started man-db-cache-update.service.
+-- Subject: Unit man-db-cache-update.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit man-db-cache-update.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jul 09 16:43:52 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: run-r314f0c15a19a4f71b78b96d385d2796d.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit run-r314f0c15a19a4f71b78b96d385d2796d.service has successfully entered the 'dead' state.
+Jul 09 16:47:50 ip-172-31-27-180.us-east-2.compute.internal sudo[14739]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/sbin/nginx -s relaod
+Jul 09 16:47:50 ip-172-31-27-180.us-east-2.compute.internal sudo[14739]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:47:50 ip-172-31-27-180.us-east-2.compute.internal sudo[14739]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:47:50 ip-172-31-27-180.us-east-2.compute.internal sudo[14739]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:47:52 ip-172-31-27-180.us-east-2.compute.internal sudo[14742]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/sbin/nginx -s reload
+Jul 09 16:47:52 ip-172-31-27-180.us-east-2.compute.internal sudo[14742]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:47:52 ip-172-31-27-180.us-east-2.compute.internal sudo[14742]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:47:52 ip-172-31-27-180.us-east-2.compute.internal sudo[14742]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:47:58 ip-172-31-27-180.us-east-2.compute.internal sshd[14748]: error: kex_exchange_identification: Connection closed by remote host
+Jul 09 16:47:59 ip-172-31-27-180.us-east-2.compute.internal sshd[14746]: Received disconnect from 221.131.165.56 port 10073:11:  [preauth]
+Jul 09 16:47:59 ip-172-31-27-180.us-east-2.compute.internal sshd[14746]: Disconnected from authenticating user root 221.131.165.56 port 10073 [preauth]
+Jul 09 16:48:00 ip-172-31-27-180.us-east-2.compute.internal sudo[14749]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/sbin/nginx -s start
+Jul 09 16:48:00 ip-172-31-27-180.us-east-2.compute.internal sudo[14749]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:48:00 ip-172-31-27-180.us-east-2.compute.internal sudo[14749]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:48:00 ip-172-31-27-180.us-east-2.compute.internal sudo[14749]: pam_unix(sudo:session): session closed for user root
+Jul 09 16:48:16 ip-172-31-27-180.us-east-2.compute.internal sudo[14752]:   centos : TTY=pts/1 ; PWD=/home/centos/capuchin-portfolio ; USER=root ; COMMAND=/bin/systemctl start nginx
+Jul 09 16:48:16 ip-172-31-27-180.us-east-2.compute.internal sudo[14752]: pam_systemd(sudo:session): Cannot create session: Already running in a session or user slice
+Jul 09 16:48:16 ip-172-31-27-180.us-east-2.compute.internal sudo[14752]: pam_unix(sudo:session): session opened for user root by centos(uid=0)
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Starting The nginx HTTP and reverse proxy server...
+-- Subject: Unit nginx.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit nginx.service has begun starting up.
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal nginx[14758]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal nginx[14758]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to [::]:443 failed (98: Address already in use)
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to [::]:443 failed (98: Address already in use)
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+Jul 09 16:48:17 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+Jul 09 16:48:18 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to [::]:443 failed (98: Address already in use)
+Jul 09 16:48:18 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+Jul 09 16:48:18 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+Jul 09 16:48:18 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+Jul 09 16:48:18 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to [::]:443 failed (98: Address already in use)
+Jul 09 16:48:18 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+Jul 09 16:48:18 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+Jul 09 16:48:18 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+Jul 09 16:48:19 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to [::]:443 failed (98: Address already in use)
+Jul 09 16:48:19 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+Jul 09 16:48:19 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+Jul 09 16:48:19 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] bind() to [::]:80 failed (98: Address already in use)
+Jul 09 16:48:19 ip-172-31-27-180.us-east-2.compute.internal nginx[14759]: nginx: [emerg] still could not bind()
+Jul 09 16:48:19 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: nginx.service: Control process exited, code=exited status=1
+Jul 09 16:48:19 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: nginx.service: Failed with result 'exit-code'.
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- The unit nginx.service has entered the 'failed' state with result 'exit-code'.
+Jul 09 16:48:19 ip-172-31-27-180.us-east-2.compute.internal systemd[1]: Failed to start The nginx HTTP and reverse proxy server.
+-- Subject: Unit nginx.service has failed
+-- Defined-By: systemd
+-- Support: https://access.redhat.com/support
+-- 
+-- Unit nginx.service has failed.
+-- 
+-- The result is failed.
+Jul 09 16:48:19 ip-172-31-27-180.us-east-2.compute.internal sudo[14752]: pam_unix(sudo:session): session closed for user root
