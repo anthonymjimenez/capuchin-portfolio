@@ -1,0 +1,152 @@
+Sending build context to Docker daemon  73.85MB
+Step 1/9 : FROM python:3.8-slim-buster
+ ---> 903b387c7ed5
+Step 2/9 : RUN mkdir /myportfolio
+ ---> Using cache
+ ---> ae35ca711a31
+Step 3/9 : COPY requirements.txt /myportfolio
+ ---> Using cache
+ ---> 13f6d3e23428
+Step 4/9 : WORKDIR /myportfolio
+ ---> Using cache
+ ---> a6e540de0f02
+Step 5/9 : RUN  pip install -r requirements.txt
+ ---> Using cache
+ ---> db4c69104298
+Step 6/9 : COPY . /myportfolio
+ ---> 9928ba57902b
+Step 7/9 : RUN flask db migrate
+ ---> Running in 613eabf9d498
+[91mTraceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3211, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 307, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 767, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 425, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 253, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 368, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 611, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 605, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 584, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name or service not known
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/flask", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.8/site-packages/flask/cli.py", line 990, in main
+    cli.main(args=sys.argv[1:])
+  File "/usr/local/lib/python3.8/site-packages/flask/cli.py", line 596, in main
+    return super().main(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/click/core.py", line 1062, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.8/site-packages/click/core.py", line 1668, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/local/lib/python3.8/site-packages/click/core.py", line 1668, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/local/lib/python3.8/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/local/lib/python3.8/site-packages/click/core.py", line 763, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/click/decorators.py", line 26, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/flask/cli.py", line 440, in decorator
+    return __ctx.invoke(f, *args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/click/core.py", line 763, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/flask_migrate/cli.py", line 91, in migrate
+    _migrate(directory, message, sql, head, splice, branch_label, version_path,
+  File "/usr/local/lib/python3.8/site-packages/flask_migrate/__init__.py", line 92, in w[0m[91mrapped
+    f(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/flask_migrate/__init__.py", line 132, in migrate
+    command.revision(config, message, autogenerate=True, sql=sql,
+  File "/usr/local/lib/python3.8/site-packages/alembic/command.py", line 212, in revision
+    script_directory.run_env()
+  File "/usr/local/lib/python3.8/site-packages/alembic/script/base.py", line 490, in run_env
+    util.load_python_file(self.dir, "env.py")
+  File "/usr/local/lib/python3.8/site-packages/alembic/util/pyfiles.py", line 97, in load_python_file
+    module = load_module_py(module_id, path)
+  File "/usr/local/lib/python3.8/site-packages/alembic/util/compat.py", line 184, in load_module_py
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "migrations/env.py", line 91, in <module>
+    run_migrations_online()
+  File "migrations/env.py", line 76, in run_migrations_online
+    with connectable.connect() as connection:
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3165, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3244, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3214, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2068, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3211, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 307, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 767, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 425, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 253, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 368, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 611, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 605, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 584, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "db" to address: Name or service not known
+
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[0m
